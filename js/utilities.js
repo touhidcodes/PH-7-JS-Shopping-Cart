@@ -37,9 +37,9 @@ function addItems(displayItemId, isIncreased) {
 }
 
 // validation
-function validation() {
-	const validationId = getElementByID("item-display-phone");
-	const validationItem = getElementValue("item-display-phone");
+function validation(itemId) {
+	const validationId = getElementByID(itemId);
+	const validationItem = getElementValue(itemId);
 	if (validationItem < 0) {
 		alert("Please add at least one item");
 		validationId.value = 1;
@@ -47,9 +47,11 @@ function validation() {
 }
 
 // update price
-function updatePrice() {
-	const totalItem = getElementValue("item-display-phone");
-	const itemPriceId = getElementByID("phone-price");
-	const newPrice = totalItem * 1219;
+function updatePrice(itemId, price, value) {
+	const totalItem = getElementValue(itemId);
+	const itemPriceId = getElementByID(price);
+	const newPrice = totalItem * value;
 	itemPriceId.innerText = newPrice;
 }
+
+// Total Price Count
