@@ -4,6 +4,7 @@ document
 	.addEventListener("click", function () {
 		addItems("item-display-phone", "add");
 		updatePrice("item-display-phone", "phone-price", 1219);
+		countTotal();
 	});
 
 // Remove Item
@@ -13,4 +14,5 @@ document
 		addItems("item-display-phone", "remove");
 		validation("item-display-phone");
 		updatePrice("item-display-phone", "phone-price", 1219);
+		countTotal();
 	});

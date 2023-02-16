@@ -54,4 +54,23 @@ function updatePrice(itemId, price, value) {
 	itemPriceId.innerText = newPrice;
 }
 
-// Total Price Count
+// Total Price Count and tax
+function countTotal() {
+	const phoneValue = getElementText("phone-price");
+	const caseValue = getElementText("case-price");
+	const totalValue = phoneValue + caseValue;
+
+	const oldTotalValueId = getElementByID("total-value");
+	oldTotalValueId.innerText = totalValue;
+
+	const taxValueFloat = totalValue * 0.1;
+
+	const taxValueFixed = taxValueFloat.toFixed(2);
+	const taxValue = parseFloat(taxValueFixed);
+	const taxId = getElementByID("tax");
+	taxId.innerText = taxValue;
+
+	const finalTotal = totalValue + taxValue;
+	const finalTotalValueId = getElementByID("final-total");
+	finalTotalValueId.innerText = finalTotal;
+}
